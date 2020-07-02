@@ -3,7 +3,7 @@ arc-jupyterlab-extension adds the Arc completer and language syntax highlighting
 ## How to use
 
 ```bash
-jlpm prepare
+jlpm install
 jupyter labextension link .
 ```
 
