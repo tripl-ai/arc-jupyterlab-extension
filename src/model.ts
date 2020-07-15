@@ -217,6 +217,7 @@ export class CompleterModel implements Completer.IModel {
    * Set the available options in the completer menu.
    */
   setOptions(
+    query: string,
     newValue: IterableOrArrayLike<string>,
     typeMap?: Completer.TypeMap,
     replaceMap?: Completer.ReplaceMap,
@@ -239,6 +240,7 @@ export class CompleterModel implements Completer.IModel {
       return;
     }
     if (values.length) {
+      this._query = query;
       this._options = values;
       this._typeMap = types;
       this._replaceMap = replaces;
@@ -246,6 +248,7 @@ export class CompleterModel implements Completer.IModel {
       this._sortByMap = sortBy;
       this._orderedTypes = Private.findOrderedTypes(types);
     } else {
+      this._query = query;
       this._options = [];
       this._typeMap = {};
       this._replaceMap = {};
@@ -381,8 +384,9 @@ export class CompleterModel implements Completer.IModel {
         { 
           raw: option, 
           text: option, 
-          replaceText: option, 
-          language: "javascript"
+          replaceText: this._replaceMap[option] || option,
+          language: this._languageMap[option] || "javascript",
+          sortBy: this._sortByMap[option] || option
         }
       ));
     }

@@ -649,6 +649,7 @@ export namespace Completer {
      * Set the available options in the completer menu.
      */
     setOptions(
+      query: string,
       options: IterableOrArrayLike<string>,
       typeMap?: JSONObject,
       replaceMap?: JSONObject,

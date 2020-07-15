@@ -442,7 +442,7 @@ export class CompletionHandler implements IDisposable {
           if (language !== '<unknown>') {
             languageMap[text] = language;
           }          
-          if (language !== '<unknown>') {
+          if (sortBy !== '<unknown>') {
             sortByMap[text] = sortBy;
           }             
         } 
@@ -450,7 +450,7 @@ export class CompletionHandler implements IDisposable {
     }
 
     // Update the options, including the type map.
-    model.setOptions(matches, typeMap, replaceMap, languageMap, sortByMap);
+    model.setOptions(text, matches, typeMap, replaceMap, languageMap, sortByMap);
 
     // Update the cursor.
     model.cursor = {

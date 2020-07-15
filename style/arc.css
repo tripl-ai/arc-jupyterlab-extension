@@ -4,118 +4,93 @@
   padding-right: 0px;
 }
 
-.jp-RenderedHTMLCommon > *:last-child {
-  margin-bottom: 0px;
-}
-
-.jp-OutputArea-child:not(:last-child) {
-  margin-bottom: 1.5em;
-}
-
-.container {
-  width: 99% !important;
-}
-
-.output table.monospace tbody * {
+.jp-OutputArea-output table.monospace * {
   font-size: 14px;
   font-family: monospace;
   white-space: pre;
 }
 
-.output table.leftalign tbody * {
+.jp-OutputArea-output table.leftalign tbody * {
   text-align: left;
 }
 
-.output table.monospace tbody td:not(:last-child) {
+.jp-OutputArea-output table.monospace tbody td:not(:last-child) {
   border-right: 1px solid #f2f2f2;
 }
 
-.output .output_area:not(:first-child):not(:last-child) {
+.jp-OutputArea-output .output_area:not(:first-child):not(:last-child) {
   margin-bottom: 18px
 }
 
-.output .table_name {
+.jp-OutputArea-output .table_name {
   font-weight: bold;
   margin-bottom: -8px;
 }
 
-.output .table_name.monospace {
+.jp-OutputArea-output .table_name.monospace {
   font-weight: bold;
   margin-bottom: -8px;
   font-family: monospace;    
 }
 
-div.cell.selected {
-  border-left-width: 1px !important;
-}
-
-div.output_scroll {
-  resize: vertical !important;
-}
-
-div.output_html.rendered_html {
-  max-width: 100%;
-}
-
-div.arc.progress {
+div.progress {
   background-color: transparent;
   background-repeat: repeat-x;
-  width: 100%;
+  display: flex;
   float: left;
-}
-
-body[data-jp-theme-light="true"] * div.arc.progress {
-  background-image: linear-gradient(to bottom, #f5f5f5, #f9f9f9);
-}
-
-body[data-jp-theme-light="false"] * div.arc.progress {
-  background-image: linear-gradient(to bottom, #ababab, #aeaeae);
-}
-
-div.arc.progress-bar-info {
-  background-color: transparent;
-  background-repeat: repeat-x;
-  float: left;
-}
-
-body[data-jp-theme-light="true"] * div.arc.progress-bar-info {
-  background-image: linear-gradient(to bottom, #a4edff, #94ddff);
-}
-
-body[data-jp-theme-light="false"] * div.arc.progress-bar-info {
-  background-image: linear-gradient(to bottom, #72a5b2, #679ab2);
-}
-
-div.arc.progress-bar-success {
-  background-color: transparent;
-  background-repeat: repeat-x;
-  word-wrap: normal;
-  white-space: nowrap;
   text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
+body[data-jp-theme-light="true"] * div.progress {
   color: black;
-  float: left;
+  background-image: linear-gradient(to bottom, rgba(245,245,245,1), rgba(249,249,249,1));
 }
 
-body[data-jp-theme-light="true"] * div.arc.progress-bar-success {
-  background-image: linear-gradient(to bottom, #64cbff, #54b0ee);
+body[data-jp-theme-light="false"] * div.progress {
+  color: white;
+  background-image: linear-gradient(to bottom, rgba(245,245,245,0.15), rgba(249,249,249,0.15));
 }
 
-body[data-jp-theme-light="false"] * div.arc.progress-bar-success {
-  background-image: linear-gradient(to bottom, #468eb2, #54b0ee);
-}
-
-div.arc.progress-bar-danger {
+div.progress-bar-info {
   background-color: transparent;
   background-repeat: repeat-x;
-  margin: 0;
-  float: left;
 }
 
-body[data-jp-theme-light="true"] * div.arc.progress-bar-danger {
-  background-image: linear-gradient(to bottom, #ff637d, #ed5463);
+body[data-jp-theme-light="true"] * div.progress-bar-info {
+  background-image: linear-gradient(to bottom, rgba(164,237,255,1), rgba(148,221,255,1));
 }
 
-body[data-jp-theme-light="false"] * div.arc.progress-bar-danger {
-  background-image: linear-gradient(to bottom, #b24557, #a53a45);
+body[data-jp-theme-light="false"] * div.progress-bar-info {
+  background-image: linear-gradient(to bottom, rgba(164,237,255,0.6), rgba(148,221,255,0.6));
+}
+
+div.progress-bar-success {
+  background-color: transparent;
+  background-repeat: repeat-x;
+  color: black;
+}
+
+body[data-jp-theme-light="true"] * div.progress-bar-success {
+  background-image: linear-gradient(to bottom, rgba(100,203,255,1), rgba(84,176,238,1));
+}
+
+body[data-jp-theme-light="false"] * div.progress-bar-success {
+  background-image: linear-gradient(to bottom, rgba(100,203,255,0.6), rgba(84,176,238,0.6));
+}
+
+div.progress-bar-danger {
+  background-color: transparent;
+  background-repeat: repeat-x;
+  color: black;
+}
+
+body[data-jp-theme-light="true"] * div.progress-bar-danger {
+  background-image: linear-gradient(to bottom, rgba(255,99,125,1), rgba(237,84,99,1));
+}
+
+body[data-jp-theme-light="false"] * div.progress-bar-danger {
+  background-image: linear-gradient(to bottom, rgba(255,99,125,0.6), rgba(237,84,99,0.6));
 }
 

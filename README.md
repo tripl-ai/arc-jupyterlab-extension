@@ -5,6 +5,7 @@ arc-jupyterlab-extension adds the Arc completer and language syntax highlighting
 ```bash
 jlpm install
 jupyter labextension link .
+jupyter lab build
 ```
 
 ## Authors/Contributors
