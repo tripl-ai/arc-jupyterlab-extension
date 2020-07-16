@@ -59,38 +59,42 @@ div.progress-bar-info {
 }
 
 body[data-jp-theme-light="true"] * div.progress-bar-info {
+  color: black;
   background-image: linear-gradient(to bottom, rgba(164,237,255,1), rgba(148,221,255,1));
 }
 
 body[data-jp-theme-light="false"] * div.progress-bar-info {
-  background-image: linear-gradient(to bottom, rgba(164,237,255,0.6), rgba(148,221,255,0.6));
+  color: white;
+  background-image: linear-gradient(to bottom, rgba(164,237,255,0.5), rgba(148,221,255,0.5));
 }
 
 div.progress-bar-success {
   background-color: transparent;
   background-repeat: repeat-x;
-  color: black;
 }
 
 body[data-jp-theme-light="true"] * div.progress-bar-success {
+  color: black;
   background-image: linear-gradient(to bottom, rgba(100,203,255,1), rgba(84,176,238,1));
 }
 
 body[data-jp-theme-light="false"] * div.progress-bar-success {
-  background-image: linear-gradient(to bottom, rgba(100,203,255,0.6), rgba(84,176,238,0.6));
+  color: white;
+  background-image: linear-gradient(to bottom, rgba(100,203,255,0.5), rgba(84,176,238,0.5));
 }
 
 div.progress-bar-danger {
   background-color: transparent;
   background-repeat: repeat-x;
-  color: black;
 }
 
 body[data-jp-theme-light="true"] * div.progress-bar-danger {
+  color: black;
   background-image: linear-gradient(to bottom, rgba(255,99,125,1), rgba(237,84,99,1));
 }
 
 body[data-jp-theme-light="false"] * div.progress-bar-danger {
-  background-image: linear-gradient(to bottom, rgba(255,99,125,0.6), rgba(237,84,99,0.6));
+  color: white;
+  background-image: linear-gradient(to bottom, rgba(255,99,125,0.5), rgba(237,84,99,0.5));
 }
 

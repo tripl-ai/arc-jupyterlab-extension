@@ -223,19 +223,22 @@ export class CompleterModel implements Completer.IModel {
     replaceMap?: Completer.ReplaceMap,
     languageMap?: Completer.LanguageMap,
     sortByMap?: Completer.SortByMap,
+    documentationMap?: Completer.DocumentationMap,
   ) {
     const values = toArray(newValue || []);
     const types = typeMap || {};
     const replaces = replaceMap || {};
     const languages = languageMap || {};
     const sortBy = sortByMap || {};
+    const documentation = documentationMap || {};
 
     if (
       JSONExt.deepEqual(values, this._options) &&
       JSONExt.deepEqual(types, this._typeMap) &&
       JSONExt.deepEqual(replaces, this._replaceMap) && 
       JSONExt.deepEqual(languages, this._languageMap) && 
-      JSONExt.deepEqual(sortBy, this._sortByMap)
+      JSONExt.deepEqual(sortBy, this._sortByMap) &&
+      JSONExt.deepEqual(documentation, this._documentationMap)
     ) {
       return;
     }
@@ -246,6 +249,7 @@ export class CompleterModel implements Completer.IModel {
       this._replaceMap = replaces;
       this._languageMap = languages;
       this._sortByMap = sortBy;
+      this._documentationMap = documentation;
       this._orderedTypes = Private.findOrderedTypes(types);
     } else {
       this._query = query;
@@ -254,6 +258,7 @@ export class CompleterModel implements Completer.IModel {
       this._replaceMap = {};
       this._languageMap = {};
       this._sortByMap = {};
+      this._documentationMap = {};
       this._orderedTypes = [];
     }
     this._stateChanged.emit(undefined);
@@ -386,13 +391,14 @@ export class CompleterModel implements Completer.IModel {
           text: option, 
           replaceText: this._replaceMap[option] || option,
           language: this._languageMap[option] || "javascript",
-          sortBy: this._sortByMap[option] || option
+          sortBy: this._sortByMap[option] || option,
+          documentation: this._documentationMap[option] || option,
         }
       ));
     }
     let results: Private.IMatch[] = [];
     for (let option of options) {
-      let match = StringExt.matchSumOfSquares(option, query);
+      let match = StringExt.matchSumOfSquares(option.toLocaleLowerCase(), query.toLocaleLowerCase());
       if (match) {
         let marked = StringExt.highlight(option, match.indices, Private.mark);
         results.push({
@@ -402,6 +408,7 @@ export class CompleterModel implements Completer.IModel {
           replaceText: this._replaceMap[option] || option,
           language: this._languageMap[option] || "javascript",
           sortBy: this._sortByMap[option] || option,
+          documentation: this._documentationMap[option] || "",
         });
       }
     }
@@ -409,7 +416,8 @@ export class CompleterModel implements Completer.IModel {
       text: result.text,
       raw: result.raw,
       replaceText: result.replaceText,
-      language: result.language
+      language: result.language,
+      documentation: result.documentation,
     }));
   }
 
@@ -441,6 +449,7 @@ export class CompleterModel implements Completer.IModel {
   private _replaceMap: Completer.ReplaceMap = {};
   private _languageMap: Completer.LanguageMap = {};
   private _sortByMap: Completer.SortByMap = {};
+  private _documentationMap: Completer.DocumentationMap = {};
   private _orderedTypes: string[] = [];
   private _stateChanged = new Signal<this, void>(this);
 }
@@ -497,6 +506,11 @@ namespace Private {
      * The custom sort field for codemirror of the completion match.
      */
     sortBy: string;    
+
+    /**
+     * The link to documentation for the completion match.
+     */
+    documentation: string;     
   }
 
   /**

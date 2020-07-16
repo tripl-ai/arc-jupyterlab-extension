@@ -420,6 +420,7 @@ export class CompletionHandler implements IDisposable {
     const replaceMap: Completer.ReplaceMap = {};
     const languageMap: Completer.LanguageMap = {};
     const sortByMap: Completer.SortByMap = {};
+    const documentationMap: Completer.DocumentationMap = {};
 
     if (types) {
       types.forEach((item: JSONValue) => {
@@ -431,6 +432,7 @@ export class CompletionHandler implements IDisposable {
         const replaceText = (<JSONObject>item).replaceText as string;
         const language = (<JSONObject>item).language as string;
         const sortBy = (<JSONObject>item).sortBy as string;
+        const documentation = (<JSONObject>item).documentation as string;
 
         if (matchSet.has(text)) {
           if (type !== '<unknown>') {
@@ -444,13 +446,16 @@ export class CompletionHandler implements IDisposable {
           }          
           if (sortBy !== '<unknown>') {
             sortByMap[text] = sortBy;
-          }             
+          }    
+          if (documentation !== '<unknown>') {
+            documentationMap[text] = documentation;
+          }                     
         } 
       });
     }
 
     // Update the options, including the type map.
-    model.setOptions(text, matches, typeMap, replaceMap, languageMap, sortByMap);
+    model.setOptions(text, matches, typeMap, replaceMap, languageMap, sortByMap, documentationMap);
 
     // Update the cursor.
     model.cursor = {
