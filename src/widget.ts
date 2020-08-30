@@ -405,7 +405,7 @@ export class Completer extends Widget {
       // If user clicked documentation link
       if (target.nodeName == "A") {
         event.stopPropagation();
-        return 
+        return
       }
 
       // If the user has made a selection, emit its value and reset the widget.
@@ -740,7 +740,7 @@ export namespace Completer {
     /**
      * The documentation link of a visible completer item.
      */
-    documentation: string;    
+    documentation: string;
   }
 
   /**

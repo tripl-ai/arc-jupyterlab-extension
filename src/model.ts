@@ -235,8 +235,8 @@ export class CompleterModel implements Completer.IModel {
     if (
       JSONExt.deepEqual(values, this._options) &&
       JSONExt.deepEqual(types, this._typeMap) &&
-      JSONExt.deepEqual(replaces, this._replaceMap) && 
-      JSONExt.deepEqual(languages, this._languageMap) && 
+      JSONExt.deepEqual(replaces, this._replaceMap) &&
+      JSONExt.deepEqual(languages, this._languageMap) &&
       JSONExt.deepEqual(sortBy, this._sortByMap) &&
       JSONExt.deepEqual(documentation, this._documentationMap)
     ) {
@@ -386,9 +386,9 @@ export class CompleterModel implements Completer.IModel {
     let query = this._query;
     if (!query) {
       return map(options, option => (
-        { 
-          raw: option, 
-          text: option, 
+        {
+          raw: option,
+          text: option,
           replaceText: this._replaceMap[option] || option,
           language: this._languageMap[option] || "javascript",
           sortBy: this._sortByMap[option] || option,
@@ -505,12 +505,12 @@ namespace Private {
     /**
      * The custom sort field for codemirror of the completion match.
      */
-    sortBy: string;    
+    sortBy: string;
 
     /**
      * The link to documentation for the completion match.
      */
-    documentation: string;     
+    documentation: string;
   }
 
   /**

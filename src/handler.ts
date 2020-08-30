@@ -443,14 +443,14 @@ export class CompletionHandler implements IDisposable {
           }
           if (language !== '<unknown>') {
             languageMap[text] = language;
-          }          
+          }
           if (sortBy !== '<unknown>') {
             sortByMap[text] = sortBy;
-          }    
+          }
           if (documentation !== '<unknown>') {
             documentationMap[text] = documentation;
-          }                     
-        } 
+          }
+        }
       });
     }
 

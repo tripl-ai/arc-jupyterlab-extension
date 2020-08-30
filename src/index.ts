@@ -35,7 +35,7 @@ namespace CommandIDs {
 
 const javascriptRegex = /^%arc|^%configplugin|^%lifecycleplugin|^{/;
 const shellRegex = /^%env|^%metadata|^%conf|^%list/;
-const sqlRegex = /^%sql|^%log/;
+const sqlRegex = /^%sql|^%sqlvalidate|^%metadatafilter|^%metadatavalidate|^%log/;
 
 /**
  * A plugin providing code completion for editors.
@@ -141,7 +141,7 @@ const setNotebookCellsEditorLanguage = (notebook: Notebook) => {
         // @ts-ignore 'indentWithTabs' not in options as of release
         widget.editor.setOption('indentWithTabs', false);
         // @ts-ignore 'smartIndent' not in options as of release
-        widget.editor.setOption('smartIndent', false);        
+        widget.editor.setOption('smartIndent', false);
         widget.editor.setOption('tabSize', 2);
       } else if (sqlRegex.test(text)) {
         // @ts-ignore 'mode' not in options as of release
@@ -151,7 +151,7 @@ const setNotebookCellsEditorLanguage = (notebook: Notebook) => {
         // @ts-ignore 'indentWithTabs' not in options as of release
         widget.editor.setOption('indentWithTabs', false);
         // @ts-ignore 'smartIndent' not in options as of release
-        widget.editor.setOption('smartIndent', false);        
+        widget.editor.setOption('smartIndent', false);
         widget.editor.setOption('tabSize', 2);
       }
     }

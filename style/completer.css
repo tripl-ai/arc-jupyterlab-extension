@@ -82,7 +82,7 @@
   background: transparent;
   width: var(--jp-private-completer-item-height);
   text-align: center;
-  vertical-align: middle;  
+  vertical-align: middle;
 }
 
 .jp-Completer-item .jp-Completer-icon {
