@@ -133,9 +133,9 @@ const setNotebookCellsEditorLanguage = (notebook: Notebook) => {
         // @ts-ignore 'smartIndent' not in options as of release
         widget.editor.setOption('smartIndent', false);
         widget.editor.setOption('tabSize', 2);
-      } else if (shellRegex.test(text)) {
+      } else if (sqlRegex.test(text)) {
         // @ts-ignore 'mode' not in options as of release
-        widget.editor.setOption('mode', 'shell');
+        widget.editor.setOption('mode', 'sql');
         // @ts-ignore 'indentUnit' not in options as of release
         widget.editor.setOption('indentUnit', 2);
         // @ts-ignore 'indentWithTabs' not in options as of release
@@ -143,9 +143,9 @@ const setNotebookCellsEditorLanguage = (notebook: Notebook) => {
         // @ts-ignore 'smartIndent' not in options as of release
         widget.editor.setOption('smartIndent', false);
         widget.editor.setOption('tabSize', 2);
-      } else if (sqlRegex.test(text)) {
+      } else if (shellRegex.test(text)) {
         // @ts-ignore 'mode' not in options as of release
-        widget.editor.setOption('mode', 'sql');
+        widget.editor.setOption('mode', 'shell');
         // @ts-ignore 'indentUnit' not in options as of release
         widget.editor.setOption('indentUnit', 2);
         // @ts-ignore 'indentWithTabs' not in options as of release
