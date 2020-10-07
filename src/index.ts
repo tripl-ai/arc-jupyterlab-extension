@@ -35,7 +35,7 @@ namespace CommandIDs {
 
 const javascriptRegex = /^%arc|^%configplugin|^%lifecycleplugin|^{/;
 const shellRegex = /^%env|^%metadata|^%conf|^%list/;
-const sqlRegex = /^%sql|^%sqlvalidate|^%metadatafilter|^%metadatavalidate|^%log/;
+const sqlRegex = /^%sql|^%sqlvalidate|^%metadatafilter|^%metadatavalidate|^%log|^%configexecute/;
 
 /**
  * A plugin providing code completion for editors.
