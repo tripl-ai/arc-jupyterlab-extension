@@ -67,7 +67,7 @@ div.progress-bar-info {
 div.log > div {
   margin-top: 10px;
   font-family: monospace;
-  word-break: break-all;
+  font-size: 12px;
 }
 
 body[data-jp-theme-light="true"] * div.progress-bar-info {
