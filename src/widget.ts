@@ -823,6 +823,14 @@ export namespace Completer {
             typeNode.textContent = 'v';
             typeNode.setAttribute(`data-color-index`, '5');
             break;
+          case 'lifecycle':
+            typeNode.textContent = 'l';
+            typeNode.setAttribute(`data-color-index`, '6');
+            break;
+          case 'arc':
+            typeNode.textContent = '%';
+            typeNode.setAttribute(`data-color-index`, '7');
+            break;
           default:
             typeNode.textContent = (type[0] || '').toLowerCase();
             let colorIndex = (orderedTypes.indexOf(type) % N_COLORS) + 1;

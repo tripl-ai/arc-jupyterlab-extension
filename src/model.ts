@@ -461,7 +461,7 @@ namespace Private {
   /**
    * The list of known type annotations of completer matches.
    */
-  const KNOWN_TYPES = ['function', 'instance', 'class', 'module', 'keyword', 'extract', 'transform', 'load', 'execute', 'validate'];
+  const KNOWN_TYPES = ['function', 'instance', 'class', 'module', 'keyword', 'extract', 'transform', 'load', 'execute', 'validate', 'lifecycle', 'arc'];
 
   /**
    * The map of known type annotations of completer matches.
