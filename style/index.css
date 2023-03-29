@@ -3,10 +3,4 @@
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
 
-@import url('~@lumino/widgets/style/index.css');
-@import url('~@jupyterlab/apputils/style/index.css');
-
-@import url('./completer.css');
-@import url('./arc.css');
-
 
